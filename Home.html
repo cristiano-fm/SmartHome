@@ -1,0 +1,750 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Smart House </title>
+    <link rel="icon" type="image/png" href="./media/LOGObefore.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="AnimatHome.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <link rel="stylesheet" type="text/css" href="my-style.css">
+    <script src="./timedropper-master/timedropper.js"></script>
+    <link rel="stylesheet" type="text/css" href="./timedropper-master/timedropper.css">
+    <link href="./Datedropper3-master/datedropper.css" rel="stylesheet" type="text/css" />
+    <script src="./Datedropper3-master/datedropper.js"></script>
+  </head>
+
+  <body>
+    <!-------------HELP---------------------------------------->
+    <section id="help-background">
+      <div id="trigger"></div>
+      <!---HOME-HELP--->
+      <div class="help-box" id="main-help-box">
+        <div class="help-window-top">
+          <h2 class="titulo">Ajuda menu principal<h2>
+          <img class="close" src="./media/close.png">
+        </div>
+        <div class="help-box-text">
+        <p>Encontra-se no menu principal da SmartHome&#8482;. Neste menu pode escolher
+          entre várias funcionalidades suportadas pelo sistema, tais são:</p>
+          <img class="help-img" src ="./media/eletroIcon.png">
+          <p><b>Frigorífico</b> - Veja os alimentos dentro do frigorífico e encomende mais.</p>
+          <img class="help-img" src ="./media/estoresIcon.png">
+          <p><b>Estores</b> - Abra e feche as janelas de casa.</p>
+          <img class="help-img" src ="./media/agendaIcon.png">
+          <p><b>Agenda</b> - Agende tarefas para a SmartHome&#8482; realizar automaticamente.</p>
+          <img class="help-img" src ="./media/lightIcon.png">
+          <p><b>Luzes</b> - Acenda e apague as luzes de casa.</p>
+          <img class="help-img" src ="./media/cleanerIcon.png">
+          <p><b>Limpeza</b> - Ative e desative os aspiradores automaticamente para limpar.</p>
+        </div>
+      </div>
+      <!---LUZES-HELP--->
+      <div class="help-box" id="luzes-help-box">
+        <div class="help-window-top">
+          <h2 class="titulo">Ajuda menu luzes<h2>
+          <img class="close" src="./media/close.png">
+        </div>
+        <div class="help-box-text">
+          <p>Encontra-se no menu de controlo das luzes da casa.</p>
+          <p>Aqui pode ver quais são as divisões que têm as luzes ligadas. Pode ainda
+            desligar/ligar as luzes de cada divisão e controlar a intensidade destas.</p>
+          <img class="help-img" src ="./media/touch.png">
+          <p>Clique numa divisão para ligar e desligar a luz.</p>
+          <img class="help-img" src ="./media/slide.png">
+          <p>Arraste a barra para controlar a intensidade.</p>
+          <img class="help-img" src ="./media/allOff.png">
+          <p><b>Desligar Tudo</b> - Desliga todas as luzes acessas na casa.</p>
+        </div>
+      </div>
+      <!---AGENDA-HELP--->
+      <div class="help-box" id="agenda-help-box">
+        <div class="help-window-top">
+          <h2 class="titulo">Ajuda menu agenda<h2>
+          <img class="close" src="./media/close.png">
+        </div>
+        <div class="help-box-text">
+          <p>Encontra-se no menu de agendamento de tarefas.</p>
+          <p>Aqui pode agendar tarefas para a SmartHome&#8482; realizar automaticamente, poupando o seu tempo.
+            Basta selecionar uma das tarefas explicadas em baixo e escolher o dia
+            e a hora para a realização da mesma.</p>
+          <img class="help-img" src ="./media/waterIcon.png">
+          <p><b>Banho</b> - Enche a banheira de água com a temperatura selecionada.</p>
+          <img class="help-img" src ="./media/drinksIcon.png">
+          <p><b>Café</b> - Liga a máquina de café e prepara a bebida selecionada.</p>
+          <img class="help-img" src ="./media/estoresIcon.png">
+          <p><b>Estores</b> - Abre ou fecha todos os estores da casa.</p>
+          <img class="help-img" src ="./media/musicIcon.png">
+          <p><b>Música</b> - Toca a playlist selecionada em todas as divisões da casa.</p>
+          <img class="help-img" src ="./media/alarmIcon.png">
+          <p><b>Alarme</b> - Alerta a mensagem escolhida em toda a casa.</p>
+        </div>
+      </div>
+      <!---FRIGORIFICO-HELP--->
+      <div class="help-box" id="frig-help-box">
+        <div class="help-window-top">
+          <h2 class="titulo">Ajuda menu frigorífico.<h2>
+          <img class="close" src="./media/close.png">
+        </div>
+        <div class="help-box-text">
+          <p>Encontra-se no menu de conteúdo do frigorífico.</p>
+          <p>Aqui pode ver quais são os produtos alimentares que tem dentro do smart fridge
+            e as quantidades que tem. O smart fridge deteta automaticamente os alimentos
+            que coloca e retira de dentro dele. Produtos retirados do interior
+            do frigorífico desaparecem na interface.</p>
+          <img class="help-img" src ="./media/shoppingIcon.png">
+          <p><b>Encomendar</b> - Encomende produtos alimentares em falta.</p>
+        </div>
+      </div>
+      <!---ENCOMENDAS-HELP--->
+      <div class="help-box" id="enc-help-box">
+        <div class="help-window-top">
+          <h2 class="titulo">Ajuda menu encomendar<h2>
+          <img class="close" src="./media/close.png">
+        </div>
+        <div class="help-box-text">
+          <p>Encontra-se no menu de encomenda de produtos alimentares.</p>
+          <p>Aqui pode encomendar produtos alimentares de lojas parceiras e a
+            SmartHome&#8482; tratará de tudo o resto para fazer estes chegar até si.</p>
+          <p>Depois de escolher uma das categorias alimentares abaixo explicadas,
+            na janela superior irá encontrar os produtos dessa categoria.
+            Na janela inferior estão os seus produtos dentro do seu cesto.
+            Finalize a encomenda para encomendar.
+          </p>
+          <img class="help-img" src ="./media/milk.png">
+          <p><b>Laticíneos</b> - Produtos na categoria do leite e derivados como o leite, queijo, yogurtes, etc.</p>
+          <img class="help-img" src ="./media/cereal.png">
+          <p><b>Cereais</b> - Produtos na categoria dos cereais e derivados como os cereais matinais, pão, massas, etc.</p>
+          <img class="help-img" src ="./media/cola.png">
+          <p><b>Bebidas</b> - Produtos na categoria das bebidas como água, refrigerantes, nectares, etc.</p>
+          <img class="help-img" src ="./media/diet.png">
+          <p><b>Frescos</b> -  Produtos frescos do dia como carnes, peixes, legumes, frutas, etc.</p>
+          <img class="help-img" src ="./media/outros.png">
+          <p><b>Outros</b> - Outros géneros de produtos como aperitivos, doces, salgados, etc.</p>
+        </div>
+      </div>
+      <!---ALERTAS--->
+      <div class="help-box" id="cancelar-cesto">
+        <div class="help-window-top">
+          <h2 class="titulo">Atenção<h2>
+          <img class="close" src="./media/close.png">
+        </div>
+        <div class="help-box-text">
+          <img class="alert-img" src ="./media/alert.png">
+          <p class="alert-text"> Tem a certeza que pretende
+            eliminar todos<br> os produtos que tem no cesto?</p>
+          <p class="alert-confirm" id="delete-cesto">Sim</p>
+          <p class="alert-cancel" id="cancel-delete-cesto">Não</p>
+        </div>
+      </div>
+      <div class="help-box alert" id="finalizar-cesto">
+        <div class="help-window-top">
+          <h2 class="titulo">Finalizar Encomenda<h2>
+          <img class="close" src="./media/close.png">
+        </div>
+        <div class="help-box-text">
+          <br>
+          <p class="alert-text"> <b>Atenção:</b> Esta ação não é reversível, uma vez
+            encomendados os produtos não é possível cancelar a encomenda.</p>
+          <p class="alert-confirm" id="enc-cesto">Encomendar Produtos</p>
+          <p class="alert-cancel" id="cancel-enc-cesto">Cancelar</p>
+        </div>
+          <h1 id="enc-message">Encomendado! <img class="help-img" src ="./media/checked.png" style="display: inline; margin-bottom: 18px"></h1>
+      </div>
+      <!---EM-DESENVOLVIMENTO--->
+      <div class="help-box" id="devel-box">
+        <div class="help-window-top">
+          <h2 class="titulo">Em Desenvolvimento<h2>
+          <img class="close" src="./media/close.png">
+        </div>
+        <div class="help-box-text">
+          <img class="devel-img" src ="./media/under.png">
+          <p id="devt">Esta funcionalidade estará brevemente disponível.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-------------MENU-------------------------------------------------------->
+    <section class="screen" id="control-panel">
+      <!---INFO-PANEL--->
+      <section id="info-panel">
+        <img class="info-icon" id="HOME" src ="./media/LOGObranco.png" alt="logo">
+        <h2 id="menu-info">Home</h2>
+        <img class="info-icon right-icon" id="HELP" src ="./media/help.png">
+        <h2 class="right-icon" id="temp-inside" >34ºC</h2>
+      </section>
+
+      <div id="random-message-box">
+        <h2 id="random-message">Bem vindo a casa.</h2>
+      </div>
+
+      <div class="main-bar">
+        <img class="icon" id="main-icon" src ="./media/man.png" alt="icon">
+      </div>
+
+      </div>
+      <h3 id="eletro">Frigorifico</h3>
+      <div class="icon-bar" id="bar1">
+        <div class="expander" id="why"></div>
+        <div>
+          <img class="icon" id="icon1" src ="./media/eletroIcon.png" alt="icon">
+          <div class="iconBg" id="bg1"></div>
+        </div>
+      </div>
+      <h3 id="agua">Estores</h3>
+      <div class="icon-bar" id="bar2">
+        <div class="expander"></div>
+        <div>
+          <img class="icon" id="icon2" src ="./media/estoresIcon.png" alt="icon">
+          <div class="iconBg" id="bg2"></div>
+        </div>
+      </div>
+      <h3 id="agenda">Agenda</h3>
+      <div class="icon-bar" id="bar3">
+        <div class="expander"></div>
+        <div>
+          <img class="icon" id="icon3" src ="./media/agendaIcon.png" alt="icon">
+          <div class="iconBg" id="bg3"></div>
+        </div>
+      </div>
+      <h3 id="luz">Luzes</h3>
+      <div class="icon-bar" id="bar4">
+        <div class="expander"></div>
+        <div>
+          <img class="icon" id="icon4" src ="./media/lightIcon.png" alt="icon">
+          <div class="iconBg" id="bg4"></div>
+        </div>
+      </div>
+      <h3 id="limpeza">Limpeza</h3>
+      <div class="icon-bar" id="bar5">
+        <div class="expander"></div>
+        <div>
+          <img class="icon" id="icon5" src ="./media/cleanerIcon.png" alt="icon">
+          <div class="iconBg" id="bg5"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-------------BOTOES------------------------>
+    <section id="buttons">
+      <div id="help-luzes-box">
+        <img class="close-luzes-help" src="./media/close.png">
+        <h2 id="help-luzes1">
+          <img class="fingers-img" src ="./media/finger-touching.png">
+          Clique numa divisão para ligar e desligar a luz
+        </h2>
+        <h2 id="help-luzes2">
+          <img class="fingers-img" src ="./media/finger-sliding.png">
+          Arraste a barra para controlar a intensidade
+        </h2>
+      </div>
+      <div id="wc-butt">
+        <p class="percent" id="percent1">0%</p>
+        <input type="range" min="1" max="100" value="1" class="slider" id="slider1">
+      </div>
+      <div id="quartoP-butt">
+        <p class="percent" id="percent2">0%</p>
+        <input type="range" min="1" max="100" value="1" class="slider" id="slider2">
+      </div>
+      <div id="corredor-butt">
+        <p class="percent" id="percent3">0%</p>
+        <input type="range" min="1" max="100" value="1" class="slider" id="slider3">
+      </div>
+      <div id="quartoG-butt">
+        <p class="percent" id="percent4">0%</p>
+        <input type="range" min="1" max="100" value="1" class="slider" id="slider4">
+      </div>
+      <div id="cozinha-butt">
+        <p class="percent" id="percent5">0%</p>
+        <input type="range" min="1" max="100" value="1" class="slider" id="slider5">
+      </div>
+      <div id="hall-butt">
+        <p class="percent" id="percent6">0%</p>
+        <input type="range" min="1" max="100" value="1" class="slider" id="slider6">
+      </div>
+      <div id="sala-butt">
+        <p class="percent" id="percent7">0%</p>
+        <input type="range" min="1" max="100" value="1" class="slider" id="slider7">
+      </div>
+    </section>
+
+<!-------------BLUEPRINT--------------------------------------------------->
+
+    <section id="blueprint">
+      <div id="quartoP"><p id="quartoP-luz">Quarto</p></div>
+      <div id="quartoG"><p id="quartoG-luz"> Quarto Grande</p></div>
+      <div id="hall"><p id="hall-luz">Hall</p></div>
+      <div id="wc"><p id="wc-luz">WC</p></div>
+      <div id="corredor"><p id="corredor-luz">Corredor</p></div>
+      <div id="cozinha"><p id="cozinha-luz">Cozinha</p></div>
+      <div id="sala"><p id="sala-luz">Sala</p></div>
+    </section>
+
+  <!----------PROGRAMAR---------------------------------------------------------->
+
+    <section id="addto-prog-window">
+      <h2 id="help-agenda1">Selecione uma tarefa para agendar</h2>
+      <div class="window-top" id="start-top">
+        <h2 class="titulo">Agendar<h2>
+      </div>
+      <!--AGENDAR BANHO-->
+      <div class="agenda-box adicionar" id="add-banho">
+        <!--Barra da janela-->
+        <div class="window-top">
+          <h2 class="titulo">Agendar Banho<h2>
+          <img class="botao-agendar ok" id="ok1" src ="./media/yes.png" alt="logo">
+        </div>
+        <!--Texto-->
+        <p class="data-place">Data</p>
+        <p class="hora-place" id="hora-banho">Hora</p>
+        <p id="temperatura-place">Temperatura</p>
+        <!--Botoes-->
+        <input type="text" data-theme="my-style" data-min-year="2018"
+        data-max-year="2030" data-large-mode="true" data-large-default="true"
+        data-lang="pt" data-format="d-m-Y" data-lock="from"
+        class="datepicker" id="datepicker-b">
+        <input type="text" class="timepicker" id="timepicker-b"/>
+        <input type="range" min="10" max="70" value="40" class="slider" id="temperatura" required>
+        <p id="temperaturaValor">40ºC</p>
+      </div>
+      <!--AGENDAR CAFE-->
+      <div class="agenda-box adicionar" id="add-cafe">
+        <!--Barra da janela-->
+        <div class="window-top">
+          <h2 class="titulo">Agendar Bebida<h2>
+          <img class="botao-agendar ok" id="ok2" src ="./media/yes.png" alt="logo">
+        </div>
+        <!--Texto-->
+        <p class="data-place">Data</p>
+        <p class="hora-place">Hora</p>
+        <p id="bebida-place">Bebida</p>
+        <!--Botoes-->
+        <input type="text" data-theme="my-style" data-min-year="2018"
+        data-max-year="2030" data-large-mode="true" data-large-default="true"
+        data-lang="pt" data-format="d-m-Y" data-lock="from"
+        class="datepicker" id="datepicker-c">
+        <input type="text" class="timepicker" id="timepicker-c"/>
+        <div class="dropdown-butt" id="dropdown-bebida">
+          <div class="opcao-selecionada" id="nome-bebida">Expresso</div>
+          <div class="opcao" id="capuccino">Capuccino</div>
+          <div class="opcao" id="cha">Chá</div>
+          <div class="opcao" id="descafeinado">Decaf</div>
+          <div class="opcao hide" id="expresso">Expresso</div>
+        </div>
+      </div>
+      <!--AGENDAR ESTORES-->
+      <div class="agenda-box adicionar" id="add-estores">
+        <!--Barra da janela-->
+        <div class="window-top">
+          <h2 class="titulo">Agendar Estores<h2>
+          <img class="botao-agendar ok" id="ok3" src ="./media/yes.png" alt="logo">
+        </div>
+        <!--Texto-->
+        <p class="data-place">Data</p>
+        <p class="hora-place">Hora</p>
+        <p id="acao-place">Ação</p>
+        <!--Botoes-->
+        <input type="text" data-theme="my-style" data-min-year="2018"
+        data-max-year="2030" data-large-mode="true" data-large-default="true"
+        data-lang="pt" data-format="d-m-Y" data-lock="from"
+        class="datepicker" id="datepicker-e">
+        <input type="text" class="timepicker" id="timepicker-e"/>
+        <div class="opcao-selecionada" id="nome-acao">Abrir</div>
+      </div>
+      <!--AGENDAR MUSICA-->
+      <div class="agenda-box adicionar" id="add-musica">
+        <!--Barra da janela-->
+        <div class="window-top">
+          <h2 class="titulo">Agendar Música<h2>
+          <img class="botao-agendar ok" id="ok4" src ="./media/yes.png" alt="logo">
+        </div>
+        <!--Texto-->
+        <p class="data-place">Data</p>
+        <p class="hora-place">Hora</p>
+        <p id="playlist-place">Playlist</p>
+        <!--Botoes-->
+        <input type="text" data-theme="my-style" data-min-year="2018"
+        data-max-year="2030" data-large-mode="true" data-large-default="true"
+        data-lang="pt" data-format="d-m-Y" data-lock="from"
+        class="datepicker" id="datepicker-m">
+        <input type="text" class="timepicker" id="timepicker-m"/>
+        <div class="dropdown-butt" id="dropdown-musica">
+          <div class="opcao-selecionada" id="nome-musica">Rock</div>
+          <div class="opcao" id="hiphop">Hip Hop</div>
+          <div class="opcao" id="lofi">Lo-fi</div>
+          <div class="opcao" id="pop">Pop</div>
+          <div class="opcao hide" id="rock">Rock</div>
+        </div>
+      </div>
+      <!--AGENDAR ALARME-->
+      <div class="agenda-box adicionar" id="add-alarme">
+        <!--Barra da janela-->
+        <div class="window-top">
+          <h2 class="titulo">Agendar Alarme<h2>
+          <img class="botao-agendar ok" id="ok5" src ="./media/yes.png" alt="logo">
+        </div>
+        <!--Texto-->
+        <p class="data-place" id="alarm-data">Data</p>
+        <p class="hora-place" id="alarm-hora">Hora</p>
+        <p id="alarme-place">Mensagem</p>
+        <!--Botoes-->
+        <input type="text" data-theme="my-style" data-min-year="2018"
+        data-max-year="2030" data-large-mode="true" data-large-default="true"
+        data-lang="pt" data-format="d-m-Y" data-lock="from"
+        class="datepicker" id="datepicker-a">
+        <input type="text" class="timepicker" id="timepicker-a"/>
+        <textarea type="text" id="message-input" cols="10" rows="2" maxlength="30">Bom dia!</textarea>
+      </div>
+    </section>
+    <section id="prog-window">
+        <h2 id="help-agenda2">Ainda não tem tarefas agendadas</h2>
+    </section>
+
+    <!----------FRIGORIFICO---------------------------------------------------->
+
+    <div id="frig-window-top">
+      <h2 class="titulo">Dentro do Frigorífico<h2>
+    </div>
+    <section id="frigWindow">
+      <div class="produto in-frig">
+        <img class="img-produto" src="./media/leite.png">
+        <p class="nome-produto">Leite mimosa</p>
+        <p class="quantidade-produto" >1 pacote</p>
+      </div>
+
+      <div class="produto in-frig">
+        <img class="img-produto" src="./media/soda.png">
+        <p class="nome-produto">Coca-Cola</p>
+        <p class="quantidade-produto">1 pacote</p>
+      </div>
+
+      <div class="produto in-frig">
+        <img class="img-produto" src="./media/cheese.png">
+        <p class="nome-produto">Queijo</p>
+        <p class="quantidade-produto">10 fatias</p>
+      </div>
+
+      <div class="produto in-frig">
+        <img class="img-produto" src="./media/butter.png">
+        <p class="nome-produto">Manteiga</p>
+        <p class="quantidade-produto">200 g</p>
+      </div>
+
+      <div class="produto in-frig">
+        <img class="img-produto" src="./media/bolacha.png">
+        <p class="nome-produto">Bolo bolacha</p>
+        <p class="quantidade-produto">15 fatias</p>
+      </div>
+
+      <div class="produto in-frig">
+        <img class="img-produto" src="./media/eggs.png">
+        <p class="nome-produto">Ovos</p>
+        <p class="quantidade-produto">5 uni</p>
+      </div>
+
+      <div class="produto in-frig">
+        <img class="img-produto" src="./media/watermelon.png">
+        <p class="nome-produto">Melancia</p>
+        <p class="quantidade-produto">600 g</p>
+      </div>
+
+      <div class="produto in-frig">
+        <img class="img-produto" src="./media/carrot.png">
+        <p class="nome-produto">Cenouras</p>
+        <p class="quantidade-produto">8 uni</p>
+      </div>
+
+      <div class="produto in-frig">
+        <img class="img-produto" src="./media/apple.png">
+        <p class="nome-produto">Maçã</p>
+        <p class="quantidade-produto">4 uni</p>
+      </div>
+    </section>
+
+    <section id="encomendarWindow">
+      <div id="encomendar-window-top">
+        <h2 class="titulo">Produtos<h2>
+      </div>
+      <h2 id="help-mess">Selecione uma categoria para começar <br> a encomendar</h2>
+    </section>
+    <!---LATICINIOS----------->
+    <div class="section-window-top" id="lat-top">
+      <h2 class="titulo">Laticíneos<h2>
+      <img class="botao-agendar frig-cancel" src="./media/close.png" alt="logo">
+    </div>
+    <div class="section-window" id="laticineosWindow">
+      <div class="produto">
+        <img class="img-produto" src="./media/yog.png" id="img-l-1">
+        <p class="nome-p" id="nome-l-1">Oikos</p>
+        <p class="preco" id="prec-l-1">1.99€</p>
+        <p class="encomendar" id="enc-l-1">Adicionar</p>
+        <div class="quantidade-box" id="qbox-l-1">
+          <p class="quantidade-produto-enc" id="quant-l-1">1</p>
+          <img class="plus-butt" id="plus-l-1" src="./media/plus.png">
+          <img class="minus-butt" id="minus-l-1" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-l-1" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-l-1" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/leite.png" id="img-l-2">
+        <p class="nome-p" id="nome-l-2">Leite</p>
+        <p class="preco" id="prec-l-2">0.56€</p>
+        <p class="encomendar" id="enc-l-2">Adicionar</p>
+        <div class="quantidade-box" id="qbox-l-2">
+          <p class="quantidade-produto-enc" id="quant-l-2">1</p>
+          <img class="plus-butt" id="plus-l-2" src="./media/plus.png">
+          <img class="minus-butt" id="minus-l-2" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-l-2" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-l-2" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/cheese.png" id="img-l-3">
+        <p class="nome-p" id="nome-l-3">Queijo</p>
+        <p class="preco" id="prec-l-3">2€</p>
+        <p class="encomendar" id="enc-l-3">Adicionar</p>
+        <div class="quantidade-box" id="qbox-l-3">
+          <p class="quantidade-produto-enc" id="quant-l-3">1</p>
+          <img class="plus-butt" id="plus-l-3" src="./media/plus.png">
+          <img class="minus-butt" id="minus-l-3" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-l-3" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-l-3" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/butter.png" id="img-l-4">
+        <p class="nome-p" id="nome-l-4">Manteiga</p>
+        <p class="preco" id="prec-l-4">0.45€</p>
+        <p class="encomendar" id="enc-l-4">Adicionar</p>
+        <div class="quantidade-box" id="qbox-l-4">
+          <p class="quantidade-produto-enc" id="quant-l-4">1</p>
+          <img class="plus-butt" id="plus-l-4" src="./media/plus.png">
+          <img class="minus-butt" id="minus-l-4" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-l-4" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-l-4" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/yogLiq.png" id="img-l-5">
+        <p class="nome-p" id="nome-l-5">Yogurte liq.</p>
+        <p class="preco" id="prec-l-5">1€</p>
+        <p class="encomendar" id="enc-l-5">Adicionar</p>
+        <div class="quantidade-box" id="qbox-l-5">
+          <p class="quantidade-produto-enc" id="quant-l-5">1</p>
+          <img class="plus-butt" id="plus-l-5" src="./media/plus.png">
+          <img class="minus-butt" id="minus-l-5" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-l-5" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-l-5" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/chantilly.png" id="img-l-6">
+        <p class="nome-p" id="nome-l-6">Chantilly</p>
+        <p class="preco" id="prec-l-6">0.95€</p>
+        <p class="encomendar" id="enc-l-6">Adicionar</p>
+        <div class="quantidade-box" id="qbox-l-6">
+          <p class="quantidade-produto-enc" id="quant-l-6">1</p>
+          <img class="plus-butt" id="plus-l-6" src="./media/plus.png">
+          <img class="minus-butt" id="minus-l-6" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-l-6" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-l-6" src="./media/add.png">
+        </div>
+      </div>
+    </div>
+    <!---CEREAIS----------->
+    <div class="section-window-top" id="cereais-top">
+      <h2 class="titulo">Cereais<h2>
+      <img class="botao-agendar frig-cancel" src="./media/close.png" alt="logo">
+    </div>
+    <div  class="section-window" id="cereaisWindow">
+      <div class="produto">
+        <img class="img-produto" src="./media/cereals.png" id="img-c-1">
+        <p class="nome-p" id="nome-c-1">Estrelitas</p>
+        <p class="preco" id="prec-c-1">2.30€</p>
+        <p class="encomendar" id="enc-c-1">Adicionar</p>
+        <div class="quantidade-box" id="qbox-c-1">
+          <p class="quantidade-produto-enc" id="quant-c-1">1</p>
+          <img class="plus-butt" id="plus-c-1" src="./media/plus.png">
+          <img class="minus-butt" id="minus-c-1" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-c-1" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-c-1" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/baguette.png" id="img-c-2">
+        <p class="nome-p" id="nome-c-2">Baguette</p>
+        <p class="preco" id="prec-c-2">0.32€</p>
+        <p class="encomendar" id="enc-c-2">Adicionar</p>
+        <div class="quantidade-box" id="qbox-c-2">
+          <p class="quantidade-produto-enc" id="quant-c-2">1</p>
+          <img class="plus-butt" id="plus-c-2" src="./media/plus.png">
+          <img class="minus-butt" id="minus-c-2" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-c-2" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-c-2" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/pasta.png" id="img-c-3">
+        <p class="nome-p" id="nome-c-3">Massa</p>
+        <p class="preco" id="prec-c-3">0.63€</p>
+        <p class="encomendar" id="enc-c-3">Adicionar</p>
+        <div class="quantidade-box" id="qbox-c-3">
+          <p class="quantidade-produto-enc" id="quant-c-3">1</p>
+          <img class="plus-butt" id="plus-c-3" src="./media/plus.png">
+          <img class="minus-butt" id="minus-c-3" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-c-3" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-c-3" src="./media/add.png">
+        </div>
+      </div>
+    </div>
+    <!---BEBIDAS----------->
+    <div class="section-window-top" id="beb-top">
+      <h2 class="titulo">Bebidas<h2>
+      <img class="botao-agendar frig-cancel" src="./media/close.png" alt="logo">
+    </div>
+    <div class="section-window" id="bebidasWindow">
+      <div class="produto">
+        <img class="img-produto" src="./media/soda.png" id="img-b-1">
+        <p class="nome-p" id="nome-b-1">IcedTea</p>
+        <p class="preco" id="prec-b-1">1€</p>
+        <p class="encomendar" id="enc-b-1">Adicionar</p>
+        <div class="quantidade-box" id="qbox-b-1">
+          <p class="quantidade-produto-enc" id="quant-b-1">1</p>
+          <img class="plus-butt" id="plus-b-1" src="./media/plus.png">
+          <img class="minus-butt" id="minus-b-1" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-b-1" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-b-1" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/water.png" id="img-b-2">
+        <p class="nome-p" id="nome-b-2">Água</p>
+        <p class="preco" id="prec-b-2">0.21€</p>
+        <p class="encomendar" id="enc-b-2">Adicionar</p>
+        <div class="quantidade-box" id="qbox-b-2">
+          <p class="quantidade-produto-enc" id="quant-b-2">1</p>
+          <img class="plus-butt" id="plus-b-2" src="./media/plus.png">
+          <img class="minus-butt" id="minus-b-2" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-b-2" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-b-2" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/can.png" id="img-b-3">
+        <p class="nome-p" id="nome-b-3">Pepsi</p>
+        <p class="preco" id="prec-b-3">0.86€</p>
+        <p class="encomendar" id="enc-b-3">Adicionar</p>
+        <div class="quantidade-box" id="qbox-b-3">
+          <p class="quantidade-produto-enc" id="quant-b-3">1</p>
+          <img class="plus-butt" id="plus-b-3" src="./media/plus.png">
+          <img class="minus-butt" id="minus-b-3" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-b-3" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-b-3" src="./media/add.png">
+        </div>
+      </div>
+    </div>
+    <!---FRESCOS----------->
+    <div class="section-window-top" id="frescos-top">
+      <h2 class="titulo">Frescos<h2>
+      <img class="botao-agendar frig-cancel" src="./media/close.png" alt="logo">
+    </div>
+    <div class="section-window" id="frescosWindow">
+      <div class="produto">
+        <img class="img-produto" src="./media/meat.png" id="img-f-1">
+        <p class="nome-p" id="nome-f-1">Bife</p>
+        <p class="preco" id="prec-f-1">2.32€</p>
+        <p class="encomendar" id="enc-f-1">Adicionar</p>
+        <div class="quantidade-box" id="qbox-f-1">
+          <p class="quantidade-produto-enc" id="quant-f-1">1</p>
+          <img class="plus-butt" id="plus-f-1" src="./media/plus.png">
+          <img class="minus-butt" id="minus-f-1" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-f-1" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-f-1" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/carrot.png" id="img-f-2">
+        <p class="nome-p" id="nome-f-2">Cenouras</p>
+        <p class="preco" id="prec-f-2">0.74€</p>
+        <p class="encomendar" id="enc-f-2">Adicionar</p>
+        <div class="quantidade-box" id="qbox-f-2">
+          <p class="quantidade-produto-enc" id="quant-f-2">1</p>
+          <img class="plus-butt" id="plus-f-2" src="./media/plus.png">
+          <img class="minus-butt" id="minus-f-2" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-f-2" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-f-2" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/pineapple.png" id="img-f-3">
+        <p class="nome-p" id="nome-f-3">Ananás</p>
+        <p class="preco" id="prec-f-3">3.29€</p>
+        <p class="encomendar" id="enc-f-3">Adicionar</p>
+        <div class="quantidade-box" id="qbox-f-3">
+          <p class="quantidade-produto-enc" id="quant-f-3">1</p>
+          <img class="plus-butt" id="plus-f-3" src="./media/plus.png">
+          <img class="minus-butt" id="minus-f-3" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-f-3" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-f-3" src="./media/add.png">
+        </div>
+      </div>
+    </div>
+    <!---OUTROS----------->
+    <div class="section-window-top" id="outros-top">
+      <h2 class="titulo">Outros<h2>
+      <img class="botao-agendar frig-cancel" src="./media/close.png" alt="logo">
+    </div>
+    <div class="section-window" id="outrosWindow">
+      <div class="produto">
+        <img class="img-produto" src="./media/lollipop.png" id="img-o-1">
+        <p class="nome-p" id="nome-o-1">ChupaChups</p>
+        <p class="preco" id="prec-o-1">2€</p>
+        <p class="encomendar" id="enc-o-1">Adicionar</p>
+        <div class="quantidade-box" id="qbox-o-1">
+          <p class="quantidade-produto-enc" id="quant-o-1">1</p>
+          <img class="plus-butt" id="plus-o-1" src="./media/plus.png">
+          <img class="minus-butt" id="minus-o-1" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-o-1" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-o-1" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/bean.png" id="img-o-2">
+        <p class="nome-p" id="nome-o-2">Frutos secos</p>
+        <p class="preco" id="prec-o-2">1€</p>
+        <p class="encomendar" id="enc-o-2">Adicionar</p>
+        <div class="quantidade-box" id="qbox-o-2">
+          <p class="quantidade-produto-enc" id="quant-o-2">1</p>
+          <img class="plus-butt" id="plus-o-2" src="./media/plus.png">
+          <img class="minus-butt" id="minus-o-2" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-o-2" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-o-2" src="./media/add.png">
+        </div>
+      </div>
+      <div class="produto">
+        <img class="img-produto" src="./media/bolachas.png" id="img-o-3">
+        <p class="nome-p" id="nome-o-3">Bolachas</p>
+        <p class="preco" id="prec-o-3">0.86€</p>
+        <p class="encomendar" id="enc-o-3">Adicionar</p>
+        <div class="quantidade-box" id="qbox-o-3">
+          <p class="quantidade-produto-enc" id="quant-o-3">1</p>
+          <img class="plus-butt" id="plus-o-3" src="./media/plus.png">
+          <img class="minus-butt" id="minus-o-3" src="./media/minus.png" style="opacity: 0.5">
+          <img class="cancel-order" id="cancel-o-3" src="./media/cancel.png">
+          <img class="confirm-order" id="confirm-o-3" src="./media/add.png">
+        </div>
+      </div>
+    </div>
+    <div class="section-window-top" id="cesto-top">
+      <p id="finalizar-enc">Finalizar encomenda</p>
+      <h2 class="titulo">Cesto<h2>
+      <p id="cancelar-enc">Cancelar encomenda</p>
+    </div>
+    <section id="encomendados-window">
+      <h2 id="encomendados-mess">Ainda não tem produtos no cesto</h2>
+    </section>
+  </body>
+</html>
